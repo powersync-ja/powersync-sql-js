@@ -45,5 +45,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libdigest-sha3-perl
 
+      - name: Setup Emscripten
+        uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: "latest"
+          actions-cache-folder: "emsdk-cache"
+
       - name: Build
         run: pnpm build
