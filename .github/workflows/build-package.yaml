@@ -40,10 +40,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install rhash (includes sha3sum)
+      - name: Install sha3sum
         run: |
           sudo apt-get update
-          sudo apt-get install -y rhash
+          sudo apt-get install -y libdigest-sha3-perl
 
       - name: Build
         run: pnpm build
