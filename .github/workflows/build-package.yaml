@@ -40,5 +40,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install rhash (includes sha3sum)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rhash
+
       - name: Build
         run: pnpm build
