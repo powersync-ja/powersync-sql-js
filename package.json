@@ -1,5 +1,5 @@
 {
-  "name": "@powersync/sqljs",
+  "name": "@powersync/sql-js",
   "private": "true",
   "version": "0.0.0",
   "description": "SQL.js fork for for JourneyApps PowerSync",
@@ -8,14 +8,14 @@
   "module": "dist/bundle.mjs",
   "types": "lib/index.d.ts",
   "author": "JOURNEYAPPS",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "files": [
     "lib",
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/powersync-ja/powersync-js.git"
+    "url": "git+https://github.com/powersync-ja/powersync-sql-js.git"
   },
   "bugs": {
     "url": "https://github.com/powersync-ja/powersync-js/issues"
@@ -23,6 +23,7 @@
   "homepage": "https://docs.powersync.com",
   "scripts": {
     "build": "sh build.sh",
+    "ci:publish": "pnpm publish -r",
     "clean": "rm -rf dist sql.js"
   },
   "devDependencies": {
