@@ -1,14 +1,16 @@
 {
   "name": "@powersync/sql-js",
-  "private": "true",
   "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "description": "SQL.js fork for for JourneyApps PowerSync",
   "type": "module",
   "main": "sql-asm.js",
   "author": "JOURNEYAPPS",
   "license": "MIT",
   "files": [
-    "lib",
     "dist"
   ],
   "repository": {
