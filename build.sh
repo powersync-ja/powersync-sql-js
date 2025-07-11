@@ -21,4 +21,4 @@ make
 
 cd ../
 mkdir -p dist
-cp -r $SQLITE_PATH/dist/ dist
+cp -r $SQLITE_PATH/dist/* dist/
