@@ -2,7 +2,9 @@
 # Packages are versioned as `0.0.0-{tag}-DATETIMESTAMP`
 name: Create Dev Release
 
-on: workflow_dispatch
+# on: workflow_dispatch
+on:
+  push:
 
 jobs:
   publish:
