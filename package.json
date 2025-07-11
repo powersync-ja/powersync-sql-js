@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "description": "SQL.js fork for for JourneyApps PowerSync",
   "type": "module",
-  "main": "dist/bundle.mjs",
-  "module": "dist/bundle.mjs",
-  "types": "lib/index.d.ts",
+  "main": "sql-asm.js",
   "author": "JOURNEYAPPS",
   "license": "MIT",
   "files": [
