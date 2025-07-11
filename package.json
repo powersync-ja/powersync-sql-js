@@ -24,7 +24,9 @@
   "scripts": {
     "build": "sh build.sh",
     "ci:publish": "pnpm publish -r",
-    "clean": "rm -rf dist sql.js"
+    "changeset:version": "pnpm changeset version && pnpm install --lockfile-only --frozen-lockfile=false",
+    "clean": "rm -rf dist sql.js",
+    "release": "pnpm build && pnpm changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.5"
