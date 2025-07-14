@@ -2,7 +2,7 @@
 set -e
 
 SQLITE_VERSION="2.7.6"
-POWERSYNC_CORE_VERSION="0.4.0"
+POWERSYNC_CORE_VERSION="0.4.2"
 SQLITE_PATH="sql.js"
 
 if [ -d "$SQLITE_PATH" ]; then
@@ -10,9 +10,12 @@ if [ -d "$SQLITE_PATH" ]; then
   rm -rf $SQLITE_PATH
 fi
 
-git clone --depth 1 https://github.com/sql-js/sql.js.git $SQLITE_PATH
-
+git clone --filter=blob:none https://github.com/sql-js/sql.js.git $SQLITE_PATH
 cd $SQLITE_PATH
+
+# Main version as of 2024-10-01
+git checkout 52e5649
+
 git apply ../patches/*
 mkdir -p powersync-libs
 curl -L -o powersync-libs/libpowersync-wasm.a "https://github.com/powersync-ja/powersync-sqlite-core/releases/download/v${POWERSYNC_CORE_VERSION}/libpowersync-wasm.a"
