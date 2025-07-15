@@ -47,7 +47,7 @@ jobs:
       - name: Setup Emscripten
         uses: mymindstorm/setup-emsdk@v14
         with:
-          version: "latest"
+          version: 4.0.10
           actions-cache-folder: "emsdk-cache"
 
       - name: Create Release Pull Request or Publish to npm

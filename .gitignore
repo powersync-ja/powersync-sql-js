@@ -6,3 +6,4 @@ dist
 .fleet
 node_modules
 *.tmp
+emsdk-cache
