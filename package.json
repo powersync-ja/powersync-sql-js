@@ -1,0 +1,34 @@
+{
+  "name": "@powersync/sql-js",
+  "version": "0.0.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "description": "SQL.js fork for for JourneyApps PowerSync",
+  "type": "module",
+  "main": "sql-asm.js",
+  "author": "JOURNEYAPPS",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/powersync-ja/powersync-sql-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/powersync-ja/powersync-js/issues"
+  },
+  "homepage": "https://docs.powersync.com",
+  "scripts": {
+    "build": "sh build.sh",
+    "ci:publish": "pnpm publish -r",
+    "changeset:version": "pnpm changeset version && pnpm install --lockfile-only --frozen-lockfile=false",
+    "clean": "rm -rf dist sql.js",
+    "release": "pnpm build && pnpm changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5"
+  }
+}
