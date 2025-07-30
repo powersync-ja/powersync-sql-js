@@ -1,6 +1,6 @@
 # PowerSync SQL.js
 
-A specialized fork of SQL.js that combines the power of SQL.js (SQLite compiled to JavaScript via Emscripten) with PowerSync's [Rust core extension](https://github.com/powersync-ja/powersync-sqlite-core). This creates a completely JavaScript-based database solution that enables PowerSync functionality in environments where native dependencies cannot be used.
+A fork of SQL.js (SQLite compiled to JavaScript via Emscripten) that loads the PowerSync's [Rust core extension](https://github.com/powersync-ja/powersync-sqlite-core). This allows PowerSync functionality in environments where native dependencies cannot be used.
 
 - No native dependencies required
 - Optimized for rapid prototyping and development workflows
