@@ -1,0 +1,16 @@
+diff --git a/src/api.js b/src/api.js
+index c7f102b..2d2d106 100644
+--- a/src/api.js
++++ b/src/api.js
+@@ -613,6 +613,11 @@ Module["onRuntimeInitialized"] = function onRuntimeInitialized() {
+                 if (val === null) {
+                     return this.bindNull(pos);
+                 }
++
++                // Add ArrayBuffer support
++                if (val instanceof ArrayBuffer) {
++                    return this.bindBlob(new Uint8Array(val), pos);
++                }
+                 if (val.length != null) {
+                     return this.bindBlob(val, pos);
+                 }
