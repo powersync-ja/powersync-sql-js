@@ -1,8 +1,7 @@
 #!/bin/sh
 set -e
 
-SQLITE_VERSION="2.7.6"
-POWERSYNC_CORE_VERSION="0.4.2"
+POWERSYNC_CORE_VERSION="0.4.4"
 SQLITE_PATH="sql.js"
 
 if [ -d "$SQLITE_PATH" ]; then
