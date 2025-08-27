@@ -1,5 +1,11 @@
 # @powersync/sql-js
 
+## 0.0.3
+
+### Patch Changes
+
+- 05281eb: Update SQLite to 3.50.4, PowerSync extension to 0.4.4
+
 ## 0.0.2
 
 ### Patch Changes
