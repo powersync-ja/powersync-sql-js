@@ -1,5 +1,11 @@
 # @powersync/sql-js
 
+## 0.0.5
+
+### Patch Changes
+
+- 12c985c: Update PowerSync core extension to 0.4.6.
+
 ## 0.0.4
 
 ### Patch Changes
