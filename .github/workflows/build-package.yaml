@@ -13,16 +13,15 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup NodeJS
-        uses: actions/setup-node@v5
-        with:
-          node-version-file: ".nvmrc"
-
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: latest
           run_install: false
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
 
       - name: Get pnpm store directory
         shell: bash
