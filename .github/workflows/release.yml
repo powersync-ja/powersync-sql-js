@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    # Dev publishing
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -13,23 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          # Pnpm 9.4 introduces this https://github.com/pnpm/pnpm/pull/7633
-          # which causes workspace:^1.2.0 to be converted to 1.2.0^1.2.0
-          version: 9.3
+          version: latest
           run_install: false
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
@@ -50,9 +50,13 @@ jobs:
           version: 4.0.10
           actions-cache-folder: "emsdk-cache"
 
+      - name: Build
+        run: pnpm build
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
+        if: ${{ github.event_name == 'push' }}
         with:
           # Update the monorepo lockfile after versioning
           version: pnpm changeset:version
@@ -60,4 +64,11 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Dev publish
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          pnpm changeset version --no-git-tag --snapshot dev
+          pnpm changeset publish --tag dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
