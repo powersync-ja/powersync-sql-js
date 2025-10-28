@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
+    #branches:
+    #  - main
   workflow_dispatch:
     # Dev publishing
 
@@ -12,6 +12,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions:
   id-token: write  # Required for OIDC
   contents: write # Required for changesets pushing
+  pull-requests: write # Required for changesets to create PRs
 
 jobs:
   release:
