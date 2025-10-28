@@ -1,5 +1,12 @@
 # @powersync/sql-js
 
+## 0.0.6
+
+### Patch Changes
+
+- 562fdaf: Use trusted publishing to publish this package.
+- 562fdaf: Update PowerSync core extension to version 0.4.8.
+
 ## 0.0.5
 
 ### Patch Changes
