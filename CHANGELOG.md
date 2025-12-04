@@ -1,5 +1,11 @@
 # @powersync/sql-js
 
+## 0.0.7
+
+### Patch Changes
+
+- 5caeb7d: Update PowerSync core to v0.4.10
+
 ## 0.0.6
 
 ### Patch Changes
