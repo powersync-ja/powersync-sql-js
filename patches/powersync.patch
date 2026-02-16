@@ -9,9 +9,9 @@ index 4530653..8c40a26 100644
 -SQLITE_AMALGAMATION = sqlite-amalgamation-3490100
 -SQLITE_AMALGAMATION_ZIP_URL = https://sqlite.org/2025/sqlite-amalgamation-3490100.zip
 -SQLITE_AMALGAMATION_ZIP_SHA3 = e7eb4cfb2d95626e782cfa748f534c74482f2c3c93f13ee828b9187ce05b2da7
-+SQLITE_AMALGAMATION = sqlite-amalgamation-3500400
-+SQLITE_AMALGAMATION_ZIP_URL = https://sqlite.org/2025/sqlite-amalgamation-3500400.zip
-+SQLITE_AMALGAMATION_ZIP_SHA256 = 1d3049dd0f830a025a53105fc79fd2ab9431aea99e137809d064d8ee8356b032
++SQLITE_AMALGAMATION = sqlite-amalgamation-3510200
++SQLITE_AMALGAMATION_ZIP_URL = https://sqlite.org/2026/sqlite-amalgamation-3510200.zip
++SQLITE_AMALGAMATION_ZIP_SHA256 = 6e2a845a493026bdbad0618b2b5a0cf48584faab47384480ed9f592d912f23ec
  
  # Note that extension-functions.c hasn't been updated since 2010-02-06, so likely doesn't need to be updated
  EXTENSION_FUNCTIONS = extension-functions.c
