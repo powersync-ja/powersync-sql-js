@@ -20,21 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
-        with:
-          run_install: false
+        uses: actions/checkout@v7
 
       - name: Setup NodeJS
         uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
           cache: pnpm
-      - name: Update npm
-        run: |
-          npm install -g npm@latest
-          npm --version
 
       - name: Install dependencies
         run: pnpm install
@@ -45,9 +37,9 @@ jobs:
           sudo apt-get install -y libdigest-sha3-perl
 
       - name: Setup Emscripten
-        uses: mymindstorm/setup-emsdk@v14
+        uses: emscripten-core/setup-emsdk@v16
         with:
-          version: 4.0.10
+          version: "latest"
           actions-cache-folder: "emsdk-cache"
 
       - name: Build
