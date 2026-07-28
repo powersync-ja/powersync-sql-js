@@ -1,5 +1,11 @@
 # @powersync/sql-js
 
+## 0.0.10
+
+### Patch Changes
+
+- 97e2a68: Update PowerSync SQLite core extension to version 0.5.1
+
 ## 0.0.9
 
 ### Patch Changes
